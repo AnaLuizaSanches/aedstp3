@@ -1,6 +1,6 @@
 CC = gcc
 FLAGS = #-Wall -g
-FONTES = matrix.c point.c main.c
+FONTES = matrix.c point.c stack.c main.c
 OBJETOS = $(FONTES: .c = .o)
 
 objetos : $(FONTES)

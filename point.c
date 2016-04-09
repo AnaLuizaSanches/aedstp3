@@ -8,6 +8,10 @@ struct POINT createPoint(int x, int y){
     return point;
 }
 
+int comparePoint(struct POINT point1, struct POINT point2){
+    return (point1.x == point2.x && point1.y == point2.y);
+}
+
 void printPoint(struct POINT point){
     printf("x: %d, y: %d\n", point.x, point.y);
 }

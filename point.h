@@ -9,6 +9,8 @@ typedef struct POINT
 
 struct POINT createPoint(int x, int y);
 
+int comparePoint(struct POINT point1, struct POINT point2);
+
 void printPoint(struct POINT point);
 
 #endif
