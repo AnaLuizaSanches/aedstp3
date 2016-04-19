@@ -4,14 +4,13 @@
 #include "matrix.h"
 #include "stack.h"
 
-
 int main(int argc, char const *argv[]) {
 	int n = 10;
 	row = n;
 	col = n;
 	int matrix[row][col];
-	fillMatrix(matrix);
-	printMatrix(matrix);
+	fillMatrix(matrix,row,col);
+	printMatrix(matrix,row,col);
 	/*
 
 	//criando pontos
@@ -38,10 +37,7 @@ int main(int argc, char const *argv[]) {
 	struct POINT p0 = createPoint(0,0);
 	pushStack(p0,&stack); // empilha primeira posição
 	visitMatrix(p0,matrix);
-	
-	
-
-	printMatrix(matrix);
+	printMatrix(matrix,row,col);
 	
 	
 	printStack(&stack);

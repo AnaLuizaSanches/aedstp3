@@ -13,5 +13,5 @@ int comparePoint(struct POINT point1, struct POINT point2){
 }
 
 void printPoint(struct POINT point){
-    printf("x: %d, y: %d\n", point.x+1, point.y+1);
+    printf("x: %d, y: %d\n", point.x, point.y);
 }

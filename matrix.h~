@@ -12,7 +12,7 @@ void visitMatrix(struct POINT point, int matrix[][col]);
 
 int isVisited(struct POINT point,int matrix[][col]);
 
-struct POINT getPath(struct POINT point, int matrix [][col]);
+struct POINT getPath(struct POINT point);
 
 
 #endif

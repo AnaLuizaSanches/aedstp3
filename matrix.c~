@@ -39,7 +39,7 @@ int isVisited(struct POINT point, int matrix[][col]){
 }
 
 struct POINT getPath(struct POINT point, int matrix[][col]){
-	struct POINT p = createPoint(-1, -1);
+	struct POINT createPoint(-1, -1);
 	if(point.x < col && matrix[point.x+1][point.y] == 1){
 		p =  createPoint(point.x+1, point.y);
 	}
