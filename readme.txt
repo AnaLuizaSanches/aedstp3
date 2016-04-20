@@ -1,7 +1,7 @@
 AEDS 1 - trabalho prático 3
 
-1)
+stack
+point
+matrix
 
-
-
-2)
+Obs: Na função main, quando não há caminho entra-se em loop infinito

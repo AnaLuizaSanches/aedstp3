@@ -38,6 +38,6 @@ void popStack(struct STACK *stack){
     }
 }
 
-struct POINT getTopPointStack(struct STACK *stack){
+struct POINT getTopStack(struct STACK *stack){
     return (*stack).points[(*stack).top];
 }

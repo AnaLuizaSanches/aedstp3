@@ -3,7 +3,6 @@
 #include "point.h"
 #include "matrix.h"
 
-
 void fillMatrix(int matrix[][col]){
 	int i, j;
 	srand(time(0));
@@ -23,7 +22,11 @@ void printMatrix(int matrix[][col]){
 	int i,j;
 	for(i=0; i<row; i++){
 		for (j=0; j<col; j++){
-			printf("%d ",matrix[i][j]);
+			if(matrix[i][j] == 2){
+				printf("  ");
+			}else{
+				printf("%d ",matrix[i][j]);
+			}
 		}
 		printf("\n");
 	}
@@ -54,4 +57,3 @@ struct POINT getPath(struct POINT point, int matrix[][col]){
 	}
 	return p;
 }
-

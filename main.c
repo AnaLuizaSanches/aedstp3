@@ -1,49 +1,44 @@
 #include <stdio.h>
 #include <time.h>
 #include "point.h"
-#include "matrix.h"
 #include "stack.h"
-
+#include "matrix.h"
 
 int main(int argc, char const *argv[]) {
-	int n = 10;
+	int n = 10; // define o tamanho da matriz quadrada
 	row = n;
 	col = n;
-	int matrix[row][col];
-	fillMatrix(matrix);
-	printMatrix(matrix);
-	/*
+	int matrix[row][col]; // cria a matriz
+	fillMatrix(matrix); // preenche a matriz
 
-	//criando pontos
-	struct POINT p0 = createPoint(1,1);
-	struct POINT p1 = createPoint(2,3);
-	struct POINT p2 = createPoint(3,4);
-	struct POINT p3 = createPoint(5,6);
-
-	//criando pilha
-	int size = 3;
-	struct POINT points[size];
-	struct STACK s = createStack(size, points);
-
-	//adicionando pontos pra pilha
-	pushStack(p1, &s);
-	pushStack(p2, &s);
-
-	//imprimindo pilha
-	printStack(&s);
-	*/
 	int size = n*n; // define tamanho máximo da pilha
 	struct POINT points[size]; // cria vetor de ponto
 	struct STACK stack = createStack(size, points); // cria pilha
-	struct POINT p0 = createPoint(0,0);
-	pushStack(p0,&stack); // empilha primeira posição
-	visitMatrix(p0,matrix);
-	
-	
+
+	struct POINT p0 = createPoint(0,0); // ponto inicial
+	struct POINT pfim = createPoint(n-1,n-1); // ponto final
+	struct POINT null = createPoint(-1,-1); //ponto nulo
+	struct POINT p; // ponto auxiliar usado no loop
+
+	p = p0; // inicia na primeira posicao
+	pushStack(p0,&stack); // empilha primeira posicao (p0)
+	visitMatrix(p0,matrix); // marca a primeira posicao como visitada(p0)
+  // enquanto não for o ponto final e for diferente de nulo
+	while( (!comparePoint(p,pfim)) &&  (!comparePoint(p,null)) ){
+		p = getPath(p,matrix);
+		if(!comparePoint(p, null)){
+			visitMatrix(p, matrix);
+			pushStack(p, &stack);
+		}
+		else{
+			popStack(&stack);
+			p = getTopStack(&stack);
+		}
+		//printStack(&stack);
+		//printf("\n");
+	}
 
 	printMatrix(matrix);
-	
-	
 	printStack(&stack);
 	return 0;
 }
