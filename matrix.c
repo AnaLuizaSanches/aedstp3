@@ -24,7 +24,7 @@ void printMatrix(int matrix[][col]){
 	for(i=0; i<row; i++){
 		for (j=0; j<col; j++){
 			if(matrix[i][j] == 2){
-				printf("* ");
+				printf("  ");
 			}else{
 				printf("%d ",matrix[i][j]);
 			}
