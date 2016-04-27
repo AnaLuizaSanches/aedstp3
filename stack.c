@@ -11,9 +11,12 @@ struct STACK createStack(int size, struct POINT *points){
 }
 
 void printStack(struct STACK *stack){
-    int i;
-    for (i = 0; i < (*stack).top; i++) {
-        printPoint((*stack).points[i]);
+    if(!isEmptyStack(stack)){
+        int i;
+        for (i = 0; i < (*stack).top; i++) {
+            printPoint((*stack).points[i]);
+        }
+        printf("\n");
     }
 }
 
@@ -39,5 +42,9 @@ void popStack(struct STACK *stack){
 }
 
 struct POINT getTopStack(struct STACK *stack){
-    return (*stack).points[(*stack).top];
+    struct POINT point = createPoint(-1,-1);
+    if(!isEmptyStack(stack))
+        point = (*stack).points[(*stack).top-1];
+
+    return point;
 }

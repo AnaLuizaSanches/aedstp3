@@ -28,8 +28,8 @@ int main(int argc, char const *argv[]) {
 	while( (!comparePoint(p,pfim)) &&  (!comparePoint(p,null)) ){
 		p = getPath(p,matrix); //proximo ponto a ser visitado, se nulo desempilha
 		if(!comparePoint(p, null)){
-			visitMatrix(p, matrix);
 			pushStack(p, &stack);
+			visitMatrix(p, matrix);
 		}
 		else{
 			popStack(&stack);
@@ -37,7 +37,8 @@ int main(int argc, char const *argv[]) {
 		}
 		/* se todos os elementos sao desempilhados (volta-se ao ponto inicial)
 		 entao nao existe caminho ate o fim */
-		if(comparePoint(p,p0)){
+		if(comparePoint(p,p0) || isEmptyStack(&stack)){
+			popStack(&stack); //esvazia a pilha removendo primeiro ponto
 			printf("caminho não encontrado\n\n");
 			break;
 		}

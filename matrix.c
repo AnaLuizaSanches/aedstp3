@@ -16,6 +16,7 @@ void fillMatrix(int matrix[][col]){
 				matrix[i][j] = 0;
 		}
 	}
+	matrix[0][0] = 1;
 }
 
 void printMatrix(int matrix[][col]){
@@ -23,7 +24,7 @@ void printMatrix(int matrix[][col]){
 	for(i=0; i<row; i++){
 		for (j=0; j<col; j++){
 			if(matrix[i][j] == 2){
-				printf("  ");
+				printf("* ");
 			}else{
 				printf("%d ",matrix[i][j]);
 			}
